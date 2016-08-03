@@ -8,7 +8,7 @@
     var task_url = "https://prod-09.westus.logic.azure.com:443/workflows/9d6f38b4b8bc4193a408f5350f30da89/triggers/manual/run?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=C_KihSSK0rSkgzdyN4rvrIOSn1VYIcHiRjvXKN3yx3A";
 
     var messageBanner;
-
+    var title;
 
     var url_array = [bug_url, task_url, pbi_url, "na"];
 
@@ -18,6 +18,8 @@
         messageBanner = new fabric.MessageBanner(element);
         messageBanner.showBanner();
         $('#main-grid').hide();
+        $('#link-to-item').text('BUG #15684: ' + title);
+        $('#input-field-link').val('https://jeffhollan.visualstudio.com/projects/foo/bugs?id=15684');
         $('#result-link').show();
         $('#input-field-link').focus();
         $('#input-field-link').select();
@@ -31,6 +33,7 @@
         item.bodyHTML = result.value;
         item.form_priority = $('#priority').val();
         item.form_title = $('#title').val();
+        title = item.form_title;
         item.form_assigned = $('#assigned').val();
         xhr.send(JSON.stringify(item));
     }
