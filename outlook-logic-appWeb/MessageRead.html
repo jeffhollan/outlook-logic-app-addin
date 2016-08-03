@@ -29,8 +29,19 @@
     <div id="content-main" class="ms-Grid">
         <p class="ms-font-xl ms-fontColor-themeDarkAlt ms-fontWeight-semilight" style="margin-top:0px; margin-bottom:0px;">Send to Logic App</p>
         <div id="main-grid" class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm12 ms-u-lg4 ms-u-md6">
+            <div class="ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-lg4">
+                <div>
+                    <label class="ms-Label">Item Type</label>
+                    <select class="my-selector" id="type">
+                        <option>Bug</option>
+                        <option>Task</option>
+                        <option>Product Backlog Item</option>
+                        <option>Note</option>
+                    </select>
+                </div>
+
                 <div class="ms-Table">
+                    
                     <div class="ms-TextField ms-Table-row">
                         <label class="ms-Label">Title</label>
                         <input id="title" class="ms-TextField-field">
@@ -49,25 +60,11 @@
 
             <div class="padding ms-Grid-col ms-u-sm12 ms-u-lg4 ms-u-md6">
                 
-                <button id="bug" class="ms-Button ms-Button--primary">
+                <button id="logicapp-button" class="ms-Button ms-Button--primary">
                     <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-                    <span class="ms-Button-label">Create Bug</span>
+                    <span class="ms-Button-label">Send to Logic App</span>
                     <span class="ms-Button-description">Description of the action this button takes</span>
                 </button> <br /> <br />
-
-                <button id="task" class="ms-Button ms-Button--primary">
-                    <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-                    <span class="ms-Button-label">Create Task</span>
-                    <span class="ms-Button-description">Description of the action this button takes</span>
-                </button> <br /> <br />
-
-
-                <button id="pbi" class="ms-Button ms-Button--primary">
-                    <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-                    <span class="ms-Button-label">Create Backlog Item</span>
-                    <span class="ms-Button-description">Description of the action this button takes</span>
-                </button> <br /> <br />
-
                 
             </div>
             </div>

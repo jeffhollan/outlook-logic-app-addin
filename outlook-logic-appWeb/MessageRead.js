@@ -10,12 +10,17 @@
     var messageBanner;
 
 
+    var url_array = [bug_url, task_url, pbi_url, "na"];
+
+
     function reqListener() {
         var element = document.querySelector('.ms-MessageBanner');
         messageBanner = new fabric.MessageBanner(element);
         messageBanner.showBanner();
         $('#main-grid').hide();
         $('#result-link').show();
+        $('#input-field-link').focus();
+        $('#input-field-link').select();
     }
 
     function send_request(item, result, url) {
@@ -47,22 +52,10 @@
             $('#title').val(item.subject);
 
             //loadProps();
-            $('#bug').click(function ()
+            $('#logicapp-button').click(function ()
             {
                 Office.context.mailbox.item.body.getAsync("html", {}, function (result) {
-                    send_request(Office.context.mailbox.item, result, bug_url);
-                });
-            });
-
-            $('#task').click(function () {
-                Office.context.mailbox.item.body.getAsync("html", {}, function (result) {
-                    send_request(Office.context.mailbox.item, result, task_url);
-                });
-            });
-
-            $('#pbi').click(function () {
-                Office.context.mailbox.item.body.getAsync("html", {}, function (result) {
-                    send_request(Office.context.mailbox.item, result, pbi_url);
+                    send_request(Office.context.mailbox.item, result, url_array[document.getElementById('type').selectedIndex]);
                 });
             });
 
@@ -121,3 +114,4 @@
 
 
 })();
+

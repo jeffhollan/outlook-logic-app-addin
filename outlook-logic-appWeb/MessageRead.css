@@ -7,3 +7,13 @@
 .ms-Button {
     width: 100%;
 }
+
+.my-selector {
+    background: transparent;
+    width: 100%;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 34px;
+    -webkit-appearance: none;
+}
