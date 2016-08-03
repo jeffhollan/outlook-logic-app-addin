@@ -9,6 +9,7 @@
 dist/
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+PublishProfiles/
 
 # Build results
 [Dd]ebug/
