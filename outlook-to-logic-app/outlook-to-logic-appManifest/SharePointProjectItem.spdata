@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ProjectItem Type="Microsoft.VisualStudio.SharePoint.OfficeApp" DefaultFile="outlook-to-logic-app.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="AppPackage" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
-  <Files>
-    <ProjectItemFile Source="outlook-to-logic-app.xml" Type="AppPackage" />
-  </Files>
-  <ExtensionData>
-    <ExtensionDataItem Key="OfficeAppManifestRelativePath" Value="outlook-to-logic-appManifest\outlook-to-logic-app.xml" />
-  </ExtensionData>
-</ProjectItem>
