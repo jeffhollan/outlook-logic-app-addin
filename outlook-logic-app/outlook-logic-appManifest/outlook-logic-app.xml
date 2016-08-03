@@ -1,11 +1,7 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Published:70EDFC97-B41D-43C5-B751-7C00AD999804-->
 <!--Created:ce44715c-8c4e-446b-879c-ea9ebe0f09c8-->
-<OfficeApp 
-          xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-          xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
-          xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" 
-          xsi:type="MailApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
 
   <!-- Begin Basic Settings: Add-in metadata, used for all versions of Office unless override provided. -->
 
@@ -17,8 +13,8 @@
   <ProviderName>[Provider name]</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-  <DisplayName DefaultValue="outlook-logic-app" />
-  <Description DefaultValue="outlook-logic-app"/>
+  <DisplayName DefaultValue="Send to Logic App" />
+  <Description DefaultValue="Send the body to a logic app" />
 
 
   <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation will only be allowed if the domain is on this list. -->
@@ -28,7 +24,7 @@
     <AppDomain>AppDomain3</AppDomain>
   </AppDomains>
   <!--End Basic Settings. -->
-  
+
   <Hosts>
     <Host Name="Mailbox" />
   </Hosts>
@@ -40,11 +36,11 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="~remoteAppUrl/MessageRead.html"/>
+        <SourceLocation DefaultValue="https://outlook-logic-app-web.azurewebsites.net/MessageRead.html" />
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
       <PhoneSettings>
-        <SourceLocation DefaultValue="~remoteAppUrl/MessageRead.html"/>
+        <SourceLocation DefaultValue="https://outlook-logic-app-web.azurewebsites.net/MessageRead.html" />
       </PhoneSettings>
     </Form>
   </FormSettings>
@@ -102,22 +98,22 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="icon16" DefaultValue="~remoteAppUrl/Images/icon16.png"/>
-        <bt:Image id="icon32" DefaultValue="~remoteAppUrl/Images/icon32.png"/>
-        <bt:Image id="icon80" DefaultValue="~remoteAppUrl/Images/icon80.png"/>
+        <bt:Image id="icon16" DefaultValue="https://outlook-logic-app-web.azurewebsites.net/Images/icon16.png" />
+        <bt:Image id="icon32" DefaultValue="https://outlook-logic-app-web.azurewebsites.net/Images/icon32.png" />
+        <bt:Image id="icon80" DefaultValue="https://outlook-logic-app-web.azurewebsites.net/Images/icon80.png" />
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="functionFile" DefaultValue="~remoteAppUrl/Functions/FunctionFile.html"/>
-        <bt:Url id="messageReadTaskPaneUrl" DefaultValue="~remoteAppUrl/MessageRead.html"/>
+        <bt:Url id="functionFile" DefaultValue="https://outlook-logic-app-web.azurewebsites.net/Functions/FunctionFile.html" />
+        <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://outlook-logic-app-web.azurewebsites.net/MessageRead.html" />
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="groupLabel" DefaultValue="My Add-in Group"/>
-        <bt:String id="customTabLabel"  DefaultValue="My Add-in Tab"/>
-        <bt:String id="paneReadButtonLabel" DefaultValue="Display all properties"/>
-        <bt:String id="paneReadSuperTipTitle" DefaultValue="Get all properties"/>
+        <bt:String id="groupLabel" DefaultValue="Azure Logic Apps" />
+        <bt:String id="customTabLabel" DefaultValue="Send to Logic App" />
+        <bt:String id="paneReadButtonLabel" DefaultValue="Send to Logic App" />
+        <bt:String id="paneReadSuperTipTitle" DefaultValue="Send to Logic app" />
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="paneReadSuperTipDescription" DefaultValue="Opens a pane displaying all available properties. This is an example of a button that opens a task pane."/>
+        <bt:String id="paneReadSuperTipDescription" DefaultValue="Sends the message and details about the message to a Logic App for further parsing." />
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
