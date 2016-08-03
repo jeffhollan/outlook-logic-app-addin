@@ -4,8 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "outlook-to-logic-app", "outlook-to-logic-app\outlook-to-logic-app.csproj", "{5B6D5E8A-C45B-492D-ABF9-295CE671A92F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "outlook-to-logic-appWeb", "outlook-to-logic-appWeb\outlook-to-logic-appWeb.csproj", "{295EF955-09B3-41B8-B4F1-BABEC88E4D76}"
+	ProjectSection(ProjectDependencies) = postProject
+		{42D1A3B5-D980-4202-86AB-1B29B52C2568} = {42D1A3B5-D980-4202-86AB-1B29B52C2568}
+	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "outlook-logic-app-web-core", "outlook-logic-app-web-core\outlook-logic-app-web-core.xproj", "{42D1A3B5-D980-4202-86AB-1B29B52C2568}"
 EndProject
@@ -21,12 +22,9 @@ Global
 		{5B6D5E8A-C45B-492D-ABF9-295CE671A92F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B6D5E8A-C45B-492D-ABF9-295CE671A92F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B6D5E8A-C45B-492D-ABF9-295CE671A92F}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{295EF955-09B3-41B8-B4F1-BABEC88E4D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{295EF955-09B3-41B8-B4F1-BABEC88E4D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{295EF955-09B3-41B8-B4F1-BABEC88E4D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{295EF955-09B3-41B8-B4F1-BABEC88E4D76}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42D1A3B5-D980-4202-86AB-1B29B52C2568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42D1A3B5-D980-4202-86AB-1B29B52C2568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42D1A3B5-D980-4202-86AB-1B29B52C2568}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{42D1A3B5-D980-4202-86AB-1B29B52C2568}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{42D1A3B5-D980-4202-86AB-1B29B52C2568}.Debug|Any CPU.Deploy.0 = Release|Any CPU
 		{42D1A3B5-D980-4202-86AB-1B29B52C2568}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42D1A3B5-D980-4202-86AB-1B29B52C2568}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

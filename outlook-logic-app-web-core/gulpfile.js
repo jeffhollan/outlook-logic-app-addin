@@ -17,8 +17,11 @@ gulp.task('sass', ['clean'], function (callback) {
    
 gulp.task('bower', ['sass'], function (callback) {
     gulp.src(lib.ext('js').files)
-        .pipe(concat('lib.js'))
+        .pipe(concat('modules.js'))
         .pipe(gulp.dest('./wwwroot/dist/js'));
+
+    gulp.src('./assets/js/**/*.js')
+        .pipe(gulp.dest('./wwwroot/dist/js/lib'));
     callback();
 });
 

@@ -43,24 +43,12 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="outlook-to-logic-appManifest\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{8cf0b3b4-0e25-470d-8d64-8267d3634f27}</SharePointProjectItemId>
     </None>
     <Content Include="outlook-to-logic-appManifest\outlook-to-logic-app.xml">
       <OpcRelationship>manifest-oemanifest</OpcRelationship>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\outlook-to-logic-appWeb\outlook-to-logic-appWeb.csproj">
-      <Project>{295EF955-09B3-41B8-B4F1-BABEC88E4D76}</Project>
-      <Name>outlook-to-logic-appWeb</Name>
-      <Private>True</Private>
-      <RoleType>Web</RoleType>
-      <OutputItemType>SharePointWebProjectOutput</OutputItemType>
-      <RoleName>outlook-to-logic-appWeb</RoleName>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -40,7 +40,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="~remoteAppUrl/MessageRead.html"/>
+        <SourceLocation DefaultValue="https://localhost:44345/MessageRead.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -99,13 +99,13 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="icon16" DefaultValue="~remoteAppUrl/Images/icon16.png"/>
-        <bt:Image id="icon32" DefaultValue="~remoteAppUrl/Images/icon32.png"/>
-        <bt:Image id="icon80" DefaultValue="~remoteAppUrl/Images/icon80.png"/>
+        <bt:Image id="icon16" DefaultValue="https://localhost:44345/Images/icon16.png"/>
+        <bt:Image id="icon32" DefaultValue="https://localhost:44345/Images/icon32.png"/>
+        <bt:Image id="icon80" DefaultValue="https://localhost:44345/Images/icon80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="functionFile" DefaultValue="~remoteAppUrl/Functions/FunctionFile.html"/>
-        <bt:Url id="messageReadTaskPaneUrl" DefaultValue="~remoteAppUrl/MessageRead.html"/>
+        <bt:Url id="functionFile" DefaultValue="https://localhost:44345/Functions/FunctionFile.html"/>
+        <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:44345/MessageRead.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="My Add-in Group"/>
