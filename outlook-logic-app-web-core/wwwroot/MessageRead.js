@@ -8,9 +8,9 @@
   // The Office initialize function must be run each time a new page is loaded.
   Office.initialize = function (reason) {
     $(document).ready(function () {
-      var element = document.querySelector('.ms-MessageBanner');
-      messageBanner = new fabric.MessageBanner(element);
-      messageBanner.hideBanner();
+      //var element = document.querySelector('.ms-MessageBanner');
+      //messageBanner = new fabric.MessageBanner(element);
+      //messageBanner.hideBanner();
       loadProps();
     });
   };
