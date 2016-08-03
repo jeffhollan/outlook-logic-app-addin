@@ -10,8 +10,12 @@
   "author": "Jeff Hollan",
   "license": "MIT",
   "devDependencies": {
+    "bower": "^1.7.9",
+    "bower-files": "^3.13.3",
+    "del": "^2.2.1",
     "gulp": "^3.9.1",
-    "gulp-bower": "0.0.13",
-    "bower": "^1.7.9"
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
   }
 }
