@@ -13,12 +13,13 @@
         $('#message').text('Sent to Logic App');
     }
 
-    function send_request(result, url) {
+    function send_request(item, result, url) {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url);
-        xhr.setRequestHeader("Content-Type", "application/xml; charset=utf-8");
+        xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
         xhr.addEventListener('load', reqListener);
-        xhr.send(result.value);
+        item.bodyHTML = result.value;
+        xhr.send(JSON.stringify(item));
     }
 
     // The Office initialize function must be run each time a new page is loaded.
@@ -32,19 +33,19 @@
             $('#bug').click(function ()
             {
                 Office.context.mailbox.item.body.getAsync("html", {}, function (result) {
-                    send_request(result, bug_url);
+                    send_request(Office.context.mailbox.item, result, bug_url);
                 });
             });
 
             $('#task').click(function () {
                 Office.context.mailbox.item.body.getAsync("html", {}, function (result) {
-                    send_request(result, task_url);
+                    send_request(Office.context.mailbox.item, result, task_url);
                 });
             });
 
             $('#pbi').click(function () {
                 Office.context.mailbox.item.body.getAsync("html", {}, function (result) {
-                    send_request(result, pbi_url);
+                    send_request(Office.context.mailbox.item, result, pbi_url);
                 });
             });
 
