@@ -43,6 +43,9 @@
         <SourceLocation DefaultValue="~remoteAppUrl/MessageRead.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
+      <PhoneSettings>
+        <SourceLocation DefaultValue="~remoteAppUrl/MessageRead.html"/>
+      </PhoneSettings>
     </Form>
   </FormSettings>
 

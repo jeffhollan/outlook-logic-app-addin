@@ -1,92 +1,56 @@
 ﻿/// <reference path="/Scripts/FabricUI/MessageBanner.js" />
 
 (function () {
-  "use strict";
+    "use strict";
 
-  var messageBanner;
+    var bug_url = "https://prod-04.westus.logic.azure.com:443/workflows/3bc2ac3aacfd4792abd2d199793210e3/triggers/manual/run?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=YPmLoGzv_qgzcevEZeoWWMBBf1UHEMqLA5RSkOQVHmM";
+    var pbi_url = "https://prod-12.westus.logic.azure.com:443/workflows/112f6e7ef61b433097247290bb8704ee/triggers/manual/run?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=_7eaLwcQ-yurddUynwQpy2hInI94RtZeSJox0ciBxvE";
+    var task_url = "https://prod-09.westus.logic.azure.com:443/workflows/9d6f38b4b8bc4193a408f5350f30da89/triggers/manual/run?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=C_KihSSK0rSkgzdyN4rvrIOSn1VYIcHiRjvXKN3yx3A";
 
-  // The Office initialize function must be run each time a new page is loaded.
-  Office.initialize = function (reason) {
-    $(document).ready(function () {
-      var element = document.querySelector('.ms-MessageBanner');
-      messageBanner = new fabric.MessageBanner(element);
-      messageBanner.hideBanner();
-      loadProps();
-    });
-  };
+    var messageBanner;
 
-  // Take an array of AttachmentDetails objects and build a list of attachment names, separated by a line-break.
-  function buildAttachmentsString(attachments) {
-    if (attachments && attachments.length > 0) {
-      var returnString = "";
-      
-      for (var i = 0; i < attachments.length; i++) {
-        if (i > 0) {
-          returnString = returnString + "<br/>";
-        }
-        returnString = returnString + attachments[i].name;
-      }
-
-      return returnString;
+    function reqListener() {
+        $('#message').text('Sent to Logic App');
     }
 
-    return "None";
-  }
-
-  // Format an EmailAddressDetails object as
-  // GivenName Surname <emailaddress>
-  function buildEmailAddressString(address) {
-    return address.displayName + " &lt;" + address.emailAddress + "&gt;";
-  }
-
-  // Take an array of EmailAddressDetails objects and
-  // build a list of formatted strings, separated by a line-break
-  function buildEmailAddressesString(addresses) {
-    if (addresses && addresses.length > 0) {
-      var returnString = "";
-
-      for (var i = 0; i < addresses.length; i++) {
-        if (i > 0) {
-          returnString = returnString + "<br/>";
-        }
-        returnString = returnString + buildEmailAddressString(addresses[i]);
-      }
-
-      return returnString;
+    function send_request(result, url) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url);
+        xhr.setRequestHeader("Content-Type", "application/xml; charset=utf-8");
+        xhr.addEventListener('load', reqListener);
+        xhr.send(result.value);
     }
 
-    return "None";
-  }
+    // The Office initialize function must be run each time a new page is loaded.
+    Office.initialize = function (reason) {
+        $(document).ready(function () {
+            var element = document.querySelector('.ms-MessageBanner');
+            messageBanner = new fabric.MessageBanner(element);
+            messageBanner.hideBanner();
 
-  // Load properties from the Item base object, then load the
-  // message-specific properties.
-  function loadProps() {
-    var item = Office.context.mailbox.item;
+            //loadProps();
+            $('#bug').click(function ()
+            {
+                Office.context.mailbox.item.body.getAsync("html", {}, function (result) {
+                    send_request(result, bug_url);
+                });
+            });
 
-    $('#dateTimeCreated').text(item.dateTimeCreated.toLocaleString());
-    $('#dateTimeModified').text(item.dateTimeModified.toLocaleString());
-    $('#itemClass').text(item.itemClass);
-    $('#itemId').text(item.itemId);
-    $('#itemType').text(item.itemType);
+            $('#task').click(function () {
+                Office.context.mailbox.item.body.getAsync("html", {}, function (result) {
+                    send_request(result, task_url);
+                });
+            });
 
-    $('#message-props').show();
+            $('#pbi').click(function () {
+                Office.context.mailbox.item.body.getAsync("html", {}, function (result) {
+                    send_request(result, pbi_url);
+                });
+            });
 
-    $('#attachments').html(buildAttachmentsString(item.attachments));
-    $('#cc').html(buildEmailAddressesString(item.cc));
-    $('#conversationId').text(item.conversationId);
-    $('#from').html(buildEmailAddressString(item.from));
-    $('#internetMessageId').text(item.internetMessageId);
-    $('#normalizedSubject').text(item.normalizedSubject);
-    $('#sender').html(buildEmailAddressString(item.sender));
-    $('#subject').text(item.subject);
-    $('#to').html(buildEmailAddressesString(item.to));
-  }
+        });
+    }
 
-  // Helper function for displaying notifications
-  function showNotification(header, content) {
-    $("#notificationHeader").text(header);
-    $("#notificationBody").text(content);
-    messageBanner.showBanner();
-    messageBanner.toggleExpansion();
-  }
+
+
 })();

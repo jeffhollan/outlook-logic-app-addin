@@ -26,11 +26,31 @@
 </head>
 <body>
     <div id="content-header">
-        <div class="padding">
-            <p class="ms-font-xl ms-fontColor-themeDarkAlt ms-fontWeight-semilight">All properties</p>
+        <div class="padding ms-Table">
+            <p class="ms-font-xl ms-fontColor-themeDarkAlt ms-fontWeight-semilight">Send to Logic App</p>
+            <button id="bug" class="ms-Button ms-Button--primary ms-Table-row">
+                <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+                <span class="ms-Button-label">Create Bug</span>
+                <span class="ms-Button-description">Description of the action this button takes</span>
+            </button> <br />
+
+            <button id="task" class="ms-Button ms-Button--primary ms-Table-row">
+                <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+                <span class="ms-Button-label">Create Task</span>
+                <span class="ms-Button-description">Description of the action this button takes</span>
+            </button> <br />
+            
+
+            <button id="pbi" class="ms-Button ms-Button--primary ms-Table-row">
+                <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+                <span class="ms-Button-label">Create Backlog Item</span>
+                <span class="ms-Button-description">Description of the action this button takes</span>
+            </button> <br />
+
+            <p id="message"></p>
         </div>
     </div>
-    <div id="content-main" class="ms-Grid">
+    <!--<div id="content-main" class="ms-Grid">
         <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm12">
                 <h2 class="ms-font-l">Office.context.mailbox.Item properties</h2>
@@ -110,7 +130,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <!-- FabricUI component used for displaying notifications -->
     <div class="ms-MessageBanner" style="position:absolute;bottom: 0;">
