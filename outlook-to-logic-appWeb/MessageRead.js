@@ -61,7 +61,7 @@
   // Load properties from the Item base object, then load the
   // message-specific properties.
   function loadProps() {
-    var item = Office.context.mailbox.item;
+      var item = Office.context.mailbox.item;
 
     $('#dateTimeCreated').text(item.dateTimeCreated.toLocaleString());
     $('#dateTimeModified').text(item.dateTimeModified.toLocaleString());

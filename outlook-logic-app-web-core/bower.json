@@ -1,0 +1,20 @@
+{
+  "name": "outlook-logic-app-web-core",
+  "description": "web client for the outlook add in to connect to Azure Logic Apps",
+  "main": "index.js",
+  "authors": [
+    "Jeff Hollan"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "3.3.6"
+  }
+}

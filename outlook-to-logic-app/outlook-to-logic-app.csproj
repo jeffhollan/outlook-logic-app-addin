@@ -43,6 +43,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="outlook-to-logic-appManifest\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{8cf0b3b4-0e25-470d-8d64-8267d3634f27}</SharePointProjectItemId>
     </None>
