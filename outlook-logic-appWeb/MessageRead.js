@@ -17,9 +17,11 @@
     function reqListener() {
         var element = document.querySelector('.ms-MessageBanner');
         messageBanner.showBanner();
+        var data = JSON.parse(this.responseText);
         $('#spinner').hide();
-        $('#link-to-item').text('BUG #15684: ' + title);
-        $('#input-field-link').val('https://jeffhollan.visualstudio.com/projects/foo/bugs?id=15684');
+        $('#link-to-item').attr('href', data['url']);
+        $('#link-to-item').text(data['display']);
+        $('#input-field-link').val(data['url']);
         $('#result-link').show();
         $('#input-field-link').focus();
         $('#input-field-link').select();
