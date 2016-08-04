@@ -3,15 +3,16 @@
 (function () {
     "use strict";
 
-    var bug_url = "https://prod-04.westus.logic.azure.com:443/workflows/3bc2ac3aacfd4792abd2d199793210e3/triggers/manual/run?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=YPmLoGzv_qgzcevEZeoWWMBBf1UHEMqLA5RSkOQVHmM";
-    var pbi_url = "https://prod-12.westus.logic.azure.com:443/workflows/112f6e7ef61b433097247290bb8704ee/triggers/manual/run?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=_7eaLwcQ-yurddUynwQpy2hInI94RtZeSJox0ciBxvE";
-    var task_url = "https://prod-09.westus.logic.azure.com:443/workflows/9d6f38b4b8bc4193a408f5350f30da89/triggers/manual/run?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=C_KihSSK0rSkgzdyN4rvrIOSn1VYIcHiRjvXKN3yx3A";
+    var bug_url = "<logic-app-url>";
+    var pbi_url = "<logic-app-url>";
+    var task_url = "<logic-app-url>";
+    var wunderlist_url = "<logic-app-url>";
 
     var messageBanner;
     var spinner;
     var title;
 
-    var url_array = [bug_url, task_url, pbi_url, "na"];
+    var url_array = [bug_url, task_url, pbi_url, "na", wunderlist_url];
     var fabricComponent = {};
 
     function reqListener() {
