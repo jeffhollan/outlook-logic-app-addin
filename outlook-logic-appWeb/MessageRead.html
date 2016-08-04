@@ -28,6 +28,7 @@
 <body>
     <div id="content-main" class="ms-Grid">
         <p class="ms-font-xl ms-fontColor-themeDarkAlt ms-fontWeight-semilight" style="margin-top:0px; margin-bottom:0px;">Send to Logic App</p>
+        <div id="spinner" class="ms-Spinner padding"><br/>Triggering Logic App....</div>
         <div id="main-grid" class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-lg4">
                 <div>
@@ -63,7 +64,7 @@
                 <button id="logicapp-button" class="ms-Button ms-Button--primary">
                     <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
                     <span class="ms-Button-label">Send to Logic App</span>
-                    <span class="ms-Button-description">Description of the action this button takes</span>
+                    <span class="ms-Button-description">Fire the logic app associated with the item.</span>
                 </button> <br /> <br />
                 
             </div>
@@ -73,17 +74,34 @@
 
     <div id="result-link" class="ms-Grid">
         <div class="ms-Grid-Row">
-            <div class="ms-TextField ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-lg4">
-                <label class="ms-Label">URL to item</label>
-                <input id="input-field-link" class="ms-TextField-field" value="http://www.bing.com">
-                <span class="ms-TextField-description"></span>
+            <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
+                <div id="link-div" class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12" contenteditable="true">
+                    <p><a id="link-to-item" href="http://www.bing.com"></a></p>
+                </div>
+                <div class="ms-TextField">
+                    <label class="ms-Label">URL to item</label>
+                    <input id="input-field-link" class="ms-TextField-field" value="http://www.bing.com">
+                    <span class="ms-TextField-description"></span>
+                </div>
             </div>
-            <br/>
-            <div id="link-div" class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12" contenteditable="true">
-                <p><a id="link-to-item" href="http://www.bing.com"></a></p>
-            </div>
-            
         </div>
+                <div class="ms-Grid-Row">
+                    <div class="ms-Grid-col ms-u-sm2 ms-u-md2 ms-u-lg2">
+
+                        <button id="copy-button" class="ms-Button ms-Button--primary">
+                            <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+                            <span class="ms-Button-label">Copy</span>
+                            <span class="ms-Button-description">Copy the URL to clipboard</span>
+                        </button>
+                    </div>
+                        <div class="ms-Grid-col ms-u-sm10 ms-u-md10 ms-u-lg19" id="copy-message">
+                            <p class="message">Copied to clipboard</p>
+                        </div>
+                   
+                </div>
+            
+            
+        
     </div>
     
 

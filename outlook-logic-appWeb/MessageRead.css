@@ -4,8 +4,17 @@
     padding: 15px;
 }
 
-.ms-Button {
+/*.ms-Button {
     width: 100%;
+}*/
+
+.message {
+    font-family: 'Segoe UI Regular WestEuropean','Segoe UI',Tahoma,Arial,sans-serif;
+    font-size: 14px;
+
+    margin: 0;
+
+    padding: 4px 20px 6px
 }
 
 .my-selector {
